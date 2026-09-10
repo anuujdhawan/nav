@@ -1,0 +1,12 @@
+---
+deployment:
+  tasks:
+    # This is the repository path shown in cPanel for this project.
+    # If npm is not found in the deployment shell, uncomment the next line
+    # and change 22 to the Node.js version selected in cPanel.
+    # - export PATH=/home/navigato/nodevenv/nav/22/bin:$PATH
+    - export NODE_ENV=production
+    - cd /home/navigato/nav && npm ci
+    - cd /home/navigato/nav && npm run build
+    - /bin/mkdir -p /home/navigato/nav/tmp
+    - /usr/bin/touch /home/navigato/nav/tmp/restart.txt
