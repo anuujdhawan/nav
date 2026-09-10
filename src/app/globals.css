@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f5dc;
+  --foreground: #2C353F;
+  --top-bar-height: 44px;
+  --top-bar-offset: 0px;
+  --main-header-height: 0px;
+  --header-text-light: #FFFFFF;
+  --header-text-dark: #2C353F;
+  --header-text-adaptive: var(--header-text-light);
+  --header-bg-light: rgba(245, 245, 220, 0.9);
+  --header-bg-dark: rgba(44, 53, 63, 0.9);
+  --font-poppins: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-montserrat: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-montserrat);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2C353F;
+    --foreground: #E8E0CE;
+  }
+}
+
+/* Custom color variables for professional theme */
+:root {
+  --primary-slate: #0F172A;
+  --secondary-slate: #1E293B;
+  --muted-slate: #436175;
+  --light-slate: #585a5e;
+  --accent-slate: #64748B;
+  --background-light: #F8FAFC;
+  --surface-light: #FFFFFF;
+  --accent-blue: #3B82F6;
+  --accent-blue-light: #60A5FA;
+  --accent-blue-dark: #2563EB;
+  --text-primary: #0F172A;
+  --text-secondary: #585a5e;
+  --text-muted: #436175;
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E1;
+}
+
+/* Custom drop shadow for logo */
+.drop-shadow-lg {
+  box-shadow: 0 10px 25px -5px rgba(67, 97, 117, 0.15), 0 4px 6px -2px rgba(67, 97, 117, 0.1);
+}
+
+/* Top bar positioning */
+.top-bar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9998 !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+/* Header positioning */
+.header-main {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  transition: transform 0.3s ease-in-out !important;
+}
+
+/* Mobile menu z-index */
+.mobile-menu {
+  z-index: 9997 !important;
+}
+
+body {
+  background: var(--background);
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(247, 55, 24, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(140, 133, 122, 0.03) 0%, transparent 50%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--foreground);
+  font-family: 'Montserrat', var(--font-montserrat), sans-serif;
+}
+
+/* Global heading styles */
+h1, h2, h3, h4, h5, h6 {
+  color: #436175;
+  font-family: 'Poppins', var(--font-poppins), sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Override for specific contexts where headings should use different colors */
+h1.text-white,
+h2.text-white,
+h3.text-white,
+h4.text-white,
+h5.text-white,
+h6.text-white,
+h1.text-surface-light,
+h2.text-surface-light,
+h3.text-surface-light,
+h4.text-surface-light,
+h5.text-surface-light,
+h6.text-surface-light,
+h1.text-primary-slate,
+h2.text-primary-slate,
+h3.text-primary-slate,
+h4.text-primary-slate,
+h5.text-primary-slate,
+h6.text-primary-slate {
+  color: inherit;
+}
+
+
+video {
+  pointer-events: none; /* Prevents right-click menu interaction */
+}
+
+/* For Webkit browsers (Chrome, Safari, etc.) */
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* The client-review video is intentionally interactive; the global video rule above
+   keeps decorative background videos inert everywhere else. */
+.success-story-video {
+  pointer-events: auto !important;
+}
+
+.success-story-video::-webkit-media-controls-panel,
+.success-story-video::-webkit-media-controls-enclosure {
+  display: flex !important;
+}
+
+/* Hide scrollbar for anchor nav and horizontal scroll containers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Adaptive header text colors based on video background */
+.header-text-adaptive {
+  color: var(--header-text-adaptive);
+}
+
+.header-bg-adaptive {
+  background: var(--header-bg-adaptive);
+}
+
+/* Hide scrollbar for anchor nav and horizontal scroll containers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
